@@ -1,0 +1,32 @@
+### lista completa dos 30 ativos com historico de preços dos ultimos 5 anos retirado do site Yahoo Finance:
+
+1.  ABEV3 (Ambev)= https://finance.yahoo.com/quote/ABEV3.SA/history/?period1=1595757114&period2=1753523505
+2.  BBAS3 (Banco do Brasil)= https://finance.yahoo.com/quote/BBAS3.SA/history/?period1=1595757231&period2=1753523623
+3.  BBDC4 (Bradesco)= https://finance.yahoo.com/quote/BBDC4.SA/history/?period1=1595757307&period2=1753523702
+4.  BRFS3 (BRF)= https://finance.yahoo.com/quote/BRFS3.SA/history/?period1=1595757404&period2=1753523800
+5.  BRKM5 (Braskem)= https://finance.yahoo.com/quote/BRKM5.SA/history/?period1=1595759434&period2=1753525701
+6.  CMIG4 (CEMIG)= https://finance.yahoo.com/quote/CMIG4.SA/history/?period1=1595759518&period2=1753525913
+7.  CPLE6 (Copel)= https://finance.yahoo.com/quote/CPLE6.SA/history/?period1=1595759637&period2=1753526009
+8.  CSAN3 (Cosan)= https://finance.yahoo.com/quote/CSAN3.SA/history/?err=1&period1=1595759713&period2=1753526099
+9.  CSNA3 (CSN)= https://finance.yahoo.com/quote/CSNA3.SA/history/?period1=1595759978&period2=1753526370
+10. ECOR3 (Ecorodovias)= https://finance.yahoo.com/quote/ECOR3.SA/history/?period1=1595760039&period2=1753526434
+11. ELET3 (Eletrobras)= https://finance.yahoo.com/quote/ELET3.SA/history/?period1=1595760136&period2=1753526522
+12. GGBR4 (Gerdau)= https://finance.yahoo.com/quote/GGBR4.SA/history/?period1=1595760203&period2=1753526600
+13. GRND3 (Grendene)= https://finance.yahoo.com/quote/GRND3.SA/history/?period1=1595760265&period2=1753526658
+14. ITSA4 (Itaúsa)= https://finance.yahoo.com/quote/ITSA4.SA/history/?err=1&period1=1595760331&period2=1753526725
+15. ITUB4 (Itaú Unibanco)= https://finance.yahoo.com/quote/ITUB4.SA/history/?period1=1595760413&period2=1753526806
+16. LREN3 (Lojas Renner)= https://finance.yahoo.com/quote/LREN3.SA/history/?period1=1595760505&period2=1753526900
+17. MGLU3 (Magazine Luiza)= https://finance.yahoo.com/quote/MGLU3.SA/history/?period1=1595760600&period2=1753526976
+18. MRVE3 (MRV)= https://finance.yahoo.com/quote/MRVE3.SA/history/?period1=1595758828&period2=1753525217
+19. PETR4 (Petrobras)= https://finance.yahoo.com/quote/PETR4.SA/history/?period1=1595760687&period2=1753527077
+20. POMO4 (Marcopolo)= https://finance.yahoo.com/quote/POMO4.SA/history/?period1=1595760780&period2=1753527166
+21. VIVT3 (Telefonica Brasil SA)= https://finance.yahoo.com/quote/VIVT3.SA/history/?period1=1595761005&period2=1753527343
+22. PRIO3 (Prio)= https://finance.yahoo.com/quote/PRIO3.SA/history/?period1=1595761384&period2=1753527772
+23. RADL3 (Raia Drogasil)= https://finance.yahoo.com/quote/RADL3.SA/history/?period1=1595761488&period2=1753527873
+24. RAPT4 (Randon)= https://finance.yahoo.com/quote/RAPT4.SA/history/?period1=1595761607&period2=1753527992
+25. RENT3 (Localiza)= https://finance.yahoo.com/quote/RENT3.SA/history/?period1=1595761714&period2=1753528105
+26. SANB11 (Santander Brasil)= https://finance.yahoo.com/quote/SANB11.SA/history/?period1=1595761791&period2=1753528186
+27. SUZB3 (Suzano)= https://finance.yahoo.com/quote/SUZB3.SA/history/?period1=1595761871&period2=1753528256
+28. TAEE3 (Taesa)= https://finance.yahoo.com/quote/TAEE3.SA/history/?period1=1595761961&period2=1753528352
+29. VALE3 (Vale)= https://finance.yahoo.com/quote/VALE3.SA/history/?period1=1595762039&period2=1753528431
+30. WEGE3 (WEG)= https://finance.yahoo.com/quote/WEGE3.SA/history/?period1=1595762125&period2=1753528505
