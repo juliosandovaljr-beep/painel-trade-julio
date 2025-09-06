@@ -1,3 +1,10 @@
 streamlit
 pandas
 plotly
+yfinance
+numpy
+scipy
+scikit-learn
+ta-lib
+matplotlib
+seaborn
