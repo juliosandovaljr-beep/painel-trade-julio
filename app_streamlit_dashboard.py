@@ -38,18 +38,62 @@ def carregar_dados():
             })
         
         # Carregar arquivos diários se existirem
-        csv_files = [f for f in os.listdir() if f.endswith(".csv") and "diario" in f]
-        if csv_files:
-            df_all = pd.concat([pd.read_csv(f) for f in csv_files], ignore_index=True)
+        if os.path.exists("dados_completos_dashboard.csv"):
+            df_all = pd.read_csv("dados_completos_dashboard.csv")
         else:
-            # Criar dados mock se não existir
-            df_all = pd.DataFrame({
-                "Ticker": ["POMO4", "BRFS3", "WEGE3", "MGLU3"] * 100,
-                "Date": pd.date_range("2020-01-01", periods=400),
-                "Variação_%": [1.2, -0.8, 2.1, -1.5] * 100,
-                "Tipo_Gap": ["Alta", "Baixa", "Sem Gap", "Alta"] * 100,
-                "Dia_Semana": ["Segunda", "Terça", "Quarta", "Quinta"] * 100
-            })
+            csv_files = [f for f in os.listdir() if f.endswith(".csv") and "diario" in f]
+            if csv_files:
+                # Tentar carregar e processar arquivos individuais
+                dfs = []
+                for f in csv_files:
+                    try:
+                        df_temp = pd.read_csv(f)
+                        if not df_temp.empty and len(df_temp.columns) > 3:
+                            # Extrair ticker do nome do arquivo
+                            ticker = f.replace("_diario_5anos.csv", "")
+                            df_temp['Ticker'] = ticker
+                            
+                            # Calcular variação percentual se não existir
+                            if 'Close' in df_temp.columns:
+                                df_temp['Variação_%'] = df_temp['Close'].pct_change() * 100
+                                df_temp['Variação_%'] = df_temp['Variação_%'].fillna(0)
+                                
+                                # Definir tipo de gap
+                                df_temp['Tipo_Gap'] = df_temp['Variação_%'].apply(
+                                    lambda x: 'Alta' if x > 1 else 'Baixa' if x < -1 else 'Sem Gap'
+                                )
+                                
+                                # Adicionar dia da semana se Date existe
+                                if 'Date' in df_temp.columns:
+                                    df_temp['Date'] = pd.to_datetime(df_temp['Date'])
+                                    df_temp['Dia_Semana'] = df_temp['Date'].dt.day_name().map({
+                                        'Monday': 'Segunda', 'Tuesday': 'Terça', 'Wednesday': 'Quarta',
+                                        'Thursday': 'Quinta', 'Friday': 'Sexta'
+                                    }).fillna('Segunda')
+                                    
+                                dfs.append(df_temp)
+                    except Exception as e:
+                        continue
+                
+                if dfs:
+                    df_all = pd.concat(dfs, ignore_index=True)
+                else:
+                    df_all = pd.DataFrame({
+                        "Ticker": ["POMO4", "BRFS3", "WEGE3", "MGLU3"] * 100,
+                        "Date": pd.date_range("2020-01-01", periods=400),
+                        "Variação_%": [1.2, -0.8, 2.1, -1.5] * 100,
+                        "Tipo_Gap": ["Alta", "Baixa", "Sem Gap", "Alta"] * 100,
+                        "Dia_Semana": ["Segunda", "Terça", "Quarta", "Quinta"] * 100
+                    })
+            else:
+                # Criar dados mock se não existir
+                df_all = pd.DataFrame({
+                    "Ticker": ["POMO4", "BRFS3", "WEGE3", "MGLU3"] * 100,
+                    "Date": pd.date_range("2020-01-01", periods=400),
+                    "Variação_%": [1.2, -0.8, 2.1, -1.5] * 100,
+                    "Tipo_Gap": ["Alta", "Baixa", "Sem Gap", "Alta"] * 100,
+                    "Dia_Semana": ["Segunda", "Terça", "Quarta", "Quinta"] * 100
+                })
             
         return df_stats, df_quartis, df_all
     except Exception as e:
